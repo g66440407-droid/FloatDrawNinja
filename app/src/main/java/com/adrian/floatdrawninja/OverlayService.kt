@@ -129,8 +129,8 @@ class OverlayService : Service() {
     }
     override fun onBind(intent: Intent?): IBinder? = null
 
-    inner class DrawingView : View(this@OverlayService) {
-        private data class Mark(val path: Path?, val y: Float?, val color: Int, val width: Float)
+    private data class Mark(val path: Path?, val y: Float?, val color: Int, val width: Float)
+        inner class DrawingView : View(this@OverlayService) {
         private val marks = mutableListOf<Mark>()
         private var activePath: Path? = null
         private var currentColor = 0xFFFFD54F.toInt()
